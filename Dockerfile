@@ -3,7 +3,7 @@ RUN mkdir -p /app
 WORKDIR /app
 COPY pom.xml /app
 COPY src /app/src
-RUN mvn -B -f pom.xml clean package -DskipTests
+RUN mvn clean verify
 
 FROM openjdk:11-jdk-slim
 COPY --from=build /app/target/*-runner.jar app.jar
