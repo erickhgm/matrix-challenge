@@ -5,17 +5,17 @@ steps:
     args: 
       - 'clean'
       - 'verify'
-  
+
   - id: build-image-docker
     name: 'gcr.io/cloud-builders/docker'
     args: 
     - 'build'
     - '-t' 
-    - 'gcr.io/${_PROJECT_ID_DEPLOY}/$REPO_NAME:$SHORT_SHA'
+    - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
     - '-t'
-    - 'gcr.io/${_PROJECT_ID_DEPLOY}/$REPO_NAME:latest'
+    - 'gcr.io/$PROJECT_ID/$REPO_NAME:latest'
     - '.'
-      
+
 images:
-- 'gcr.io/${_PROJECT_ID_DEPLOY}/$REPO_NAME:$SHORT_SHA'
-- 'gcr.io/${_PROJECT_ID_DEPLOY}/$REPO_NAME:latest'
+- 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
+- 'gcr.io/$PROJECT_ID/$REPO_NAME:latest'
