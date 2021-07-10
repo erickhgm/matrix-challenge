@@ -46,4 +46,16 @@ Access the documentation:
 
 http://localhost:8090/index.html
 
+
+### **Running tests** (with embedded H2 database)
+
+In the terminal run the following command:
+```console
+$ mvnw clean verify
+```
+Then access the coverage report in:
+```console
+$ ./target/jacoco-report/index.html
+```
+
 ## Access via Google Cloud Run

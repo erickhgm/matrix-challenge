@@ -99,5 +99,4 @@ class SimioResourceTest {
 				.body("exception", equalTo("DnaSequenceException"))
 				.body("timestamp", notNullValue());
 	}
-
 }
