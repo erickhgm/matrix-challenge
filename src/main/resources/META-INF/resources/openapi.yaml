@@ -1,0 +1,111 @@
+openapi: 3.0.1
+info:
+  title: meli-challenge
+  description: This is a small API that provides basic REST endpoints to know if a DNA sequence belongs to a Simion and to gets statistics.
+  contact:
+    email: erick.henrique.gm@gmail.com
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+
+tags:
+- name: simian
+  description: Find out if a DNA sequence is Símio
+- name: stats
+  description: Get statistics about Human and Símio
+
+paths:
+  /simian:
+    post:
+      tags:
+      - simian
+      summary: Find out if a DNA sequence is Símio and save it
+      requestBody:
+        description: DNA object that needs to be passed
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SimioRequest'
+        required: true
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimioResponse'
+        400:
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+              example: 
+                message: 'Invalid sequences: needs to be a square NxN'
+                exception: "DnaSequenceException"
+                timestamp: "2021-07-10 3:00 PM GMT31:00"
+  /stats:
+    get:
+      tags:
+      - stats
+      summary: Get statistics
+      description: Get number of human, símio and ratio
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatsResponse'
+        500:
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+              example: 
+                message: 'Connection refused'
+                exception: "ConnectException"
+                timestamp: "2021-07-10 3:00 PM GMT31:00"
+components:
+  schemas:
+    SimioRequest:
+      required:
+      - dna
+      type: object
+      properties:
+        dna:
+          type: array
+          items:
+            type: string
+          example: ['AAAA', 'CCCC', 'GGGG', 'TTTT']
+    SimioResponse:
+      type: object
+      properties:
+        is_simian:
+          type: boolean
+          example: true
+    StatsResponse:
+      type: object
+      properties:
+        count_simian_dna:
+          type: integer
+          example: 10
+        count_human_dna:
+          type: integer
+          example: 100
+        ratio:
+          type: number
+          example: 0.1
+    MessageResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        exception:
+          type: string
+        timestamp:
+          type: string
+      
+

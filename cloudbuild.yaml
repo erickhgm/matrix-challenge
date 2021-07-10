@@ -1,0 +1,21 @@
+steps:
+  - id: build-maven
+    name: 'maven:3.6.3-jdk-11-slim'
+    entrypoint: 'mvn'
+    args: 
+      - 'clean'
+      - 'verify'
+  
+  - id: build-image-docker
+    name: 'gcr.io/cloud-builders/docker'
+    args: 
+    - 'build'
+    - '-t' 
+    - 'gcr.io/${_PROJECT_ID_DEPLOY}/$REPO_NAME:$SHORT_SHA'
+    - '-t'
+    - 'gcr.io/${_PROJECT_ID_DEPLOY}/$REPO_NAME:latest'
+    - '.'
+      
+images:
+- 'gcr.io/${_PROJECT_ID_DEPLOY}/$REPO_NAME:$SHORT_SHA'
+- 'gcr.io/${_PROJECT_ID_DEPLOY}/$REPO_NAME:latest'
