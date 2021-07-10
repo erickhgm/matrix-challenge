@@ -1,6 +1,6 @@
 steps:
   - id: build-maven
-    name: 'maven:3.6.3-jdk-11-slim'
+    name: 'maven:3.8.1-openjdk-11-slim'
     entrypoint: 'mvn'
     args: 
       - 'clean'

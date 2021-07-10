@@ -16,7 +16,7 @@ import io.restassured.http.ContentType;
 
 @QuarkusTest
 @QuarkusTestResource(H2DatabaseTestResource.class)
-class T1SimioResourceTest {
+class SimioResourceTest {
 
 	@Test
 	void testIsSimianNotInDataBase() {

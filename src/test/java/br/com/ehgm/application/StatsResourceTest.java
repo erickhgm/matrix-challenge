@@ -11,7 +11,7 @@ import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
 @QuarkusTestResource(H2DatabaseTestResource.class)
-class T2StatsResourceTest {
+class StatsResourceTest {
 
 	@Test
 	void testGetStats() {
