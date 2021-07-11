@@ -95,7 +95,7 @@ class T1SimioResourceTest {
 			.then()
 				.contentType(ContentType.JSON)
 				.statusCode(400)
-				.body("message", equalTo("DnaSequence [ACTT, CTGT, ZCGT, ACGT] has invalid letters"))
+				.body("message", equalTo("DNA sequence [ACTT, CTGT, ZCGT, ACGT] has invalid letters"))
 				.body("exception", equalTo("DnaSequenceException"))
 				.body("timestamp", notNullValue());
 	}

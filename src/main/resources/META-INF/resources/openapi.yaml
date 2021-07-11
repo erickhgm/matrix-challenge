@@ -10,7 +10,6 @@ externalDocs:
   url: http://swagger.io
 
 host: "meli-challenge-jlyaiwmgpq-uc.a.run.app"
-basePath: "/v1"
 
 tags:
 - name: simian
