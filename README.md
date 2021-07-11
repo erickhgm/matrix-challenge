@@ -47,7 +47,8 @@ Linux or MacOS
 ./mvnw clean compile quarkus:dev
 ```
 
-Access the documentation: 
+### **Access the documentation**
+After starting the app using the `docker-compose` or `Maven` you can access the documentation and test using the `Try it on` option.
 
 http://localhost:8090/index.html
 
