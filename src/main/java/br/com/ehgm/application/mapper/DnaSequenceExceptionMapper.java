@@ -1,10 +1,8 @@
 package br.com.ehgm.application.mapper;
 
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
@@ -17,9 +15,6 @@ import br.com.ehgm.domain.exception.DnaSequenceException;
 public class DnaSequenceExceptionMapper implements ExceptionMapper<DnaSequenceException> {
 
 	private static final Logger LOG = Logger.getLogger(DnaSequenceExceptionMapper.class.getName());
-
-	@Context
-	UriInfo uriInfo;
 
 	@Override
 	public Response toResponse(DnaSequenceException ex) {

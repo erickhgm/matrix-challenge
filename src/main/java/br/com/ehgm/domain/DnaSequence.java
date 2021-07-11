@@ -30,8 +30,8 @@ public class DnaSequence {
 		this.sequences = sequence;
 	}
 	
-	public DnaSequence(String sequenceStr, boolean isSimian) {
-		this.sequences = Arrays.asList(sequenceStr.split("-"));
+	public DnaSequence(String sequence, boolean isSimian) {
+		this.sequences = Arrays.asList(sequence.split("-"));
 		this.isSimio = isSimian;
 	}
 	
@@ -296,7 +296,7 @@ public class DnaSequence {
 				.flatMap(Arrays::stream)
 				.collect(Collectors.toList());
 
-		// UpperCase in all letters and check if all are valid letters
+		// UpperCase in all letters and check if exist some invalid letters
 		boolean hasInvalidLetter = allLetters.stream()
 				.map(String::toUpperCase)
 				.anyMatch(Predicate.not(DNA_VALID_LETTERS::contains));
