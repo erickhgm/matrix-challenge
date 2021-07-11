@@ -55,8 +55,8 @@ $ mvnw clean verify
 ```
 Then access the coverage report in:
 ```console
-$ ./target/jacoco-report/index.html
+$ target/jacoco-report/index.html
 ```
 
-## Access via Google Cloud Run
+## Public access via Google Cloud Run
 https://meli-challenge-jlyaiwmgpq-uc.a.run.app/index.html
