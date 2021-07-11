@@ -9,11 +9,17 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 
+host: "meli-challenge-jlyaiwmgpq-uc.a.run.app"
+basePath: "/v1"
+
 tags:
 - name: simian
   description: Find out if a DNA sequence is Símio
 - name: stats
   description: Get statistics about Human and Símio
+
+schemes:
+- "https"
 
 paths:
   /simian:

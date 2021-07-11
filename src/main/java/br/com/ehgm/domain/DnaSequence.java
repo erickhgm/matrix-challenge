@@ -275,7 +275,7 @@ public class DnaSequence {
 			throw new DnaSequenceException("Invalid sequences: rows with different sizes");
 		}
 
-		LOG.info("DnaSequence has valid size");
+		LOG.info("DNA sequence has valid size");
 		this.isMatrixSizeValidated = true;
 		return true;
 	}
@@ -298,9 +298,9 @@ public class DnaSequence {
 				.anyMatch(Predicate.not(DNA_VALID_LETTERS::contains));
 
 		if (hasInvalidLetter)
-			throw new DnaSequenceException(String.format("DnaSequence %s has invalid letters", sequences));
+			throw new DnaSequenceException(String.format("DNA sequence %s has invalid letters", sequences));
 
-		LOG.info("DnaSequence has valid letters");
+		LOG.info("DNA sequence has valid letters");
 		this.isLettersValidated = true;
 		return true;
 	}

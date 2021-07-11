@@ -44,7 +44,7 @@ $ mvnw clean compile quarkus:dev
 
 Access the documentation: 
 
-http://localhost:8090/index.html
+http://localhost:8090/v1/index.html
 
 
 ### **Running tests** (with embedded H2 database)
@@ -59,3 +59,4 @@ $ ./target/jacoco-report/index.html
 ```
 
 ## Access via Google Cloud Run
+https://meli-challenge-jlyaiwmgpq-uc.a.run.app/v1/index.html
