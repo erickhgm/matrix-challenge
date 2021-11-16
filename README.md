@@ -1,4 +1,4 @@
-# meli-challenge 
+# matrix-challenge
 > Written in Hexagonal Architecture
 
 This is a small API that provides basic REST endpoints to know if a DNA sequence belongs to a Simion and to gets statistics.
@@ -24,15 +24,15 @@ First define the environment variables with values of your database:
 Windows
 ```console
 set POSTGRES_SERVER=localhost
-set POSTGRES_DB=meli
-set POSTGRES_USER=meli
+set POSTGRES_DB=matrix
+set POSTGRES_USER=matrix
 set POSTGRES_PASSWORD=123
 ```
 Linux or MacOS
 ```console
 export POSTGRES_SERVER=localhost
-export POSTGRES_DB=meli
-export POSTGRES_USER=meli
+export POSTGRES_DB=matrix
+export POSTGRES_USER=matrix
 export POSTGRES_PASSWORD=123
 ```
 
@@ -72,4 +72,4 @@ target/jacoco-report/index.html
 ```
 
 ## Public access via Google Cloud Run
-https://meli-challenge-jlyaiwmgpq-uc.a.run.app/index.html
+https://matrix-challenge-jlyaiwmgpq-uc.a.run.app/index.html
